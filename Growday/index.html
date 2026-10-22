@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f8f5">
+  <meta name="description" content="작은 실천이 자라는 곳, Growday 습관 기록 디자인 프로토타입">
+  <title>Growday — 작은 실천이 자라는 곳</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip">본문으로 이동</a>
+  <aside class="sidebar">
+    <a class="brand" href="#today" aria-label="Growday 오늘"><span class="brand-mark" data-icon="sprout"></span><span>growday<span class="brand-dot">.</span></span></a>
+    <div class="workspace-label">나의 작은 정원</div>
+    <nav class="navigation" aria-label="주 탐색">
+      <a href="#today" data-page="today"><span data-icon="home"></span><span>오늘의 루틴</span><span class="nav-dot"></span></a>
+      <a href="#calendar" data-page="calendar"><span data-icon="calendar"></span><span>잔디 캘린더</span></a>
+      <a href="#stats" data-page="stats"><span data-icon="chart"></span><span>성장 리포트</span></a>
+      <a href="#habits" data-page="habits"><span data-icon="grid"></span><span>나의 습관</span></a>
+    </nav>
+    <div class="sidebar-bottom"><div class="local-note"><span data-icon="shield"></span><div>내 기록은 내 기기에<small>로그인 없이, 가볍게 시작해요.</small></div></div><a href="#settings" data-page="settings" class="settings-link"><span data-icon="settings"></span>설정 및 데이터<span data-icon="chevron"></span></a><div class="sidebar-footer">매일 조금씩, 나답게.<span>GROWDAY · WEB PREVIEW</span></div></div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar"><span class="breadcrumb">나의 정원 <span>/</span> <b id="page-label">오늘의 루틴</b></span><span class="mobile-brand"><span data-icon="sprout"></span>growday.</span><div class="top-actions"><span class="preview-label" id="demo-label">예시 데이터</span><span class="local-badge"><i></i>이 기기에 저장</span><button class="icon-button" id="intro-button" aria-label="Growday 소개 보기"><span data-icon="help"></span></button><a class="icon-button mobile-settings" href="#settings" aria-label="설정 및 데이터"><span data-icon="settings"></span></a><span class="avatar" aria-label="나의 정원 프로필">나</span></div></header>
+    <main id="main" tabindex="-1"></main>
+
+  </div>
+  <nav class="mobile-nav" aria-label="모바일 탐색"><a href="#today" data-page="today"><span data-icon="home"></span>오늘</a><a href="#calendar" data-page="calendar"><span data-icon="calendar"></span>잔디</a><button id="mobile-add" aria-label="습관 추가"><span data-icon="plus"></span></button><a href="#stats" data-page="stats"><span data-icon="chart"></span>통계</a><a href="#habits" data-page="habits"><span data-icon="grid"></span>습관</a></nav>
+  <dialog id="modal" aria-labelledby="modal-title"><div id="modal-content"></div></dialog>
+  <div class="toast" role="status" aria-live="polite" aria-atomic="true" id="toast"></div>
+</body>
+</html>

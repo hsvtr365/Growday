@@ -1,0 +1,19 @@
+# Local planning and result documents
+/plan/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+local.properties
+*.jks
+*.keystore
+
+# IDE and build output
+.idea/
+.gradle/
+.kotlin/
+**/build/
+*.iml
+Thumbs.db
+.DS_Store
