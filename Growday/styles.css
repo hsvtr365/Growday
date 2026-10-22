@@ -116,3 +116,37 @@ dialog{border:0;border-radius:14px;max-width:343px}
 .calendar-day:hover{box-shadow:none;background-color:var(--mint)}
 .detail-item,.setting-row,.manage-bottom,.insight,.modal-head,.modal-actions,.mini-calendar .calendar-note{border:0}
 @media(max-width:374px){.app-shell,.mobile-nav{max-width:100%}.progress-card{gap:12px}.progress-text h2{font-size:14px}.calendar-controls .icon-button{min-width:32px}}
+/* Fluid layouts: columns depend on available space, never a fixed phone canvas. */
+body{background:var(--bg)}
+.app-shell{width:100%;max-width:none;margin:0;min-width:0}
+main{width:100%;max-width:none;margin:0;padding:0 0 76px}
+.dashboard,.two-column,.manage-grid{display:grid;grid-template-columns:minmax(0,1fr)}
+.dashboard>*,.two-column>*,.manage-grid>*,.stats-grid>*,.panel{min-width:0}
+.settings-stack{max-width:none}
+.mobile-nav{left:0;right:0;transform:none;width:100%;max-width:none}
+.calendar-grid{grid-template-columns:repeat(7,minmax(0,1fr));width:100%}
+.large-calendar .calendar-day{width:100%;min-width:0;min-height:44px;aspect-ratio:auto;padding:6px 0;overflow:hidden}
+.large-calendar .calendar-grid{gap:4px}
+.large-calendar .section-head{flex-wrap:wrap}
+.page-heading>div:first-child{width:auto;min-width:0}
+.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grass-grid{min-width:0}
+.toast{left:50%;max-width:calc(100vw - 20px)}
+@media(min-width:768px){
+ .topbar{height:52px}
+ .mobile-nav{justify-content:center;gap:40px}
+ .page-heading{align-items:center;flex-wrap:nowrap}
+ .page-heading>.primary{display:inline-flex}
+ .two-column{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+ .stats-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .manage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .large-calendar .calendar-day{min-height:64px;font-size:15px}
+ .large-calendar .calendar-day small{font-size:11px}
+ .setting-row{align-items:center}
+ dialog{max-width:540px}
+}
+@media(min-width:1200px){
+ .manage-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .large-calendar .calendar-day{min-height:80px}
+ .habit-time{display:flex}
+}
